@@ -1,0 +1,81 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+  }
+}
+
+body {
+    padding-top: 56px;
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-header-stocks-table th {
+    background-color: #0277BD !important;
+}
+
+.bg-header-running-table th {
+    background-color: #2E7D32 !important;
+}
+
+.bg-header-waiting-table th {
+    background-color: #D84315 !important;
+}
+
+.bg-teal {
+    background-color: #009688 !important;
+}
+
+.bg-custom-dark {
+  background-color: #141414 !important;
+}
+
+.btn-circle-hover {
+    border-radius: 0;
+    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.btn-circle-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* Pour contrôler la largeur du panneau lorsque le menu est ouvert */
+.offcanvas {
+    --bs-offcanvas-width: 300px;
+}
+
+.icon {
+    font-size: 24px;
+    /* Taille des icônes */
+    margin-right: 5px;
+    /* Espacement à droite */
+}
+
+.icon-up {
+    color: #4CAF50;
+    /* Couleur verte pour la flèche vers le haut */
+}
+
+.icon-equal {
+    color: #9E9E9E;
+    /* Couleur grise pour le signe égal */
+}
+
+.icon-down {
+    color: #F44336;
+    /* Couleur rouge pour la flèche vers le bas */
+}
