@@ -128,10 +128,10 @@
                     {% for stock in stocks %}
                     <tr>
                         <td>{{ stock.date }}</td>
-                        <td>{{ "{:,.2f}".format(stock.opening) }}</td>
-                        <td>{{ "{:,.2f}".format(stock.higher) }}</td>
-                        <td>{{ "{:,.2f}".format(stock.lower) }}</td>
-                        <td>{{ "{:,.2f}".format(stock.closing) }}</td>
+                        <td>{{ "{:,.2f}".format(stock.open) }}</td>
+                        <td>{{ "{:,.2f}".format(stock.high) }}</td>
+                        <td>{{ "{:,.2f}".format(stock.low) }}</td>
+                        <td>{{ "{:,.2f}".format(stock.close) }}</td>
                     </tr>
                     {% endfor %}
                     </tbody>

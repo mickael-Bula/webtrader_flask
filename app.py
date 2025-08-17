@@ -1,6 +1,11 @@
 from flask import Flask, render_template
 
+from database import get_stocks_from_db, get_db_engine
+
 app = Flask(__name__)
+
+# Initialise le moteur de base de données au démarrage de l'application
+db_engine = get_db_engine()
 
 
 @app.route('/')
@@ -38,15 +43,11 @@ def home():
         ]
     }
 
-    stocks = [
-        {'date': '2025-07-25', 'opening': 7800.00, 'higher': 7880.50, 'lower': 7750.25, 'closing': 7850.50},
-        {'date': '2025-07-24', 'opening': 7750.25, 'higher': 7820.10, 'lower': 7700.50, 'closing': 7780.45},
-        {'date': '2025-07-23', 'opening': 7650.15, 'higher': 7780.20, 'lower': 7640.80, 'closing': 7750.25},
-        {'date': '2025-07-22', 'opening': 7700.50, 'higher': 7720.90, 'lower': 7600.10, 'closing': 7650.15},
-    ]
+    # Récupérer les données de la base de données
+    stocks = get_stocks_from_db(engine=db_engine, table_name='cac_daily')
 
     # Calculs pour les valeurs dynamiques
-    delta = ((latest_stock['closing'] - stocks[0]['opening']) / stocks[0]['opening']) * 100
+    delta = ((latest_stock['closing'] - stocks[0]['open']) / stocks[0]['open']) * 100
     spread_to_execution = ((latest_stock['closing'] - user_data['buyLimit']) / user_data['buyLimit']) * 100
 
     return render_template(
